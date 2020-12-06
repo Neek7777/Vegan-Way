@@ -1,33 +1,45 @@
 import React from 'react';
 import {
-  BrowserRouter as Router,
+  // BrowserRouter as Router,
   Route,
-  NavLink,
+  // NavLink,
   Switch,
+  Redirect,
 } from 'react-router-dom';
 import { MainPage } from './pages/MainPage/MainPage';
 import { MapPage } from './pages/MapPage/MapPage';
 import { FavoritePage } from './pages/FavoritePage/FavoritePage';
+import { AuthPage } from './pages/AuthPage/AuthPage';
 
 export const useRoutes = (isAuthenticated) => {
   if (isAuthenticated) {
     return (
-    <Switch>
+      <Switch>
         <Route path="/" exact>
-           <MainPage/> 
-        </Route>   
+          <MainPage />
+        </Route>
         <Route path="/map" exact>
-           <MapPage/> 
-        </Route>            
+          <MapPage />
+        </Route>
         <Route path="/favorite" exact>
-           <FavoritePage/>
-        </Route>                                     
-    </Switch>
-    )
+          <FavoritePage />
+        </Route>
+        <Redirect to="/" />
+      </Switch>
+    );
   }
   return (
-  <Switch>
-
-  </Switch>
-  )
+    <Switch>
+      <Route path="/" exact>
+        <MainPage />
+      </Route>
+      <Route path="/map" exact>
+        <MapPage />
+      </Route>
+      <Route path="/auth" exact>
+        <AuthPage />
+      </Route>
+      <Redirect to="/" />
+    </Switch>
+  );
 };

@@ -1,16 +1,18 @@
 import React from 'react';
 import 'antd/dist/antd.css';
 import { DatePicker, Button } from 'antd';
-
+import { useRoutes } from './routes';
+import {
+  BrowserRouter as Router,
+  // Route,
+  // // NavLink,
+  // Switch,
+  // Redirect,
+} from 'react-router-dom';
 function App(props) {
+  const routes = useRoutes(false);
   return (
-    <>
-    <h1>Vegan Way version 1</h1>
-    <DatePicker />
-    <Button type="primary" style={{ marginLeft: 8 }}>
-      Primary Button
-    </Button>
-    </>
-  );
+          <Router>{routes}</Router>
+     );
 }
 export default App;
