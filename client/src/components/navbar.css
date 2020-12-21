@@ -1,0 +1,46 @@
+.site-layout-content {
+  height: 100%;
+  padding: 24px;
+  background: #fff;
+}
+/* #components-layout-demo-top .logo {
+    float: left;
+    width: 120px;
+    height: 31px;
+    margin: 16px 24px 16px 0;
+    background: rgba(255, 255, 255, 0.3);
+  } */
+.ant-row-rtl #components-layout-demo-top .logo {
+  float: right;
+  margin: 16px 0 16px 24px;
+}
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Comic Sans MS, Comic Sans, cursive';
+  font-style: oblique;
+  font-size: 22px;
+  color: rgba(243, 82, 8, 0.849);
+  font-weight: 900;
+  float: left;
+  width: 120px;
+  height: 31px;
+  margin: 16px 24px 16px 0;
+  background: whitesmoke;
+}
+.button {
+  float: right;
+  width: 140px;
+  height: 31px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 16px 24px 16px 16px;
+  font-family: 'Comic Sans MS, Comic Sans, cursive';
+  font-style: oblique;
+  font-size: 22px;
+  color: rgba(243, 82, 8, 0.849);
+  font-weight: 900;
+  cursor: pointer;
+}

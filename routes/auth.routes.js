@@ -37,7 +37,10 @@ router.post(
       const user = new User({ email: email, password: hashedPassword });
 
       await user.save();
-      res.status(201).json({ massage: 'Пользователь создан' });
+      const token = jwt.sign({ userId: user.id }, config.get('jwtSecret'), {
+        expiresIn: '1h',
+      });
+      res.status(201).json({ message: 'Пользователь создан', token, userId: user.id });
     } catch (e) {
       res
         .status(500)
