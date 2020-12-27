@@ -7,7 +7,7 @@ import {
   Redirect,
 } from 'react-router-dom';
 import { MainPage } from './pages/MainPage/MainPage';
-import  MapPage  from './pages/MapPage/MapPage';
+import { MapPage } from './pages/MapPage/MapPage';
 import { FavoritePage } from './pages/FavoritePage/FavoritePage';
 // import { AuthPage } from './pages/AuthPage/AuthPage';
 
@@ -20,6 +20,7 @@ export const useRoutes = (isAuthenticated) => {
         </Route>
         <Route path="/map" exact>
           <MapPage />
+          <button>Показать рестораны рядом</button>
         </Route>
         <Route path="/favorite" exact>
           <FavoritePage />
