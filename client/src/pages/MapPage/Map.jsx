@@ -1,10 +1,5 @@
 import React, { useEffect } from 'react';
-import {
-  compose,
-  withProps,
-  withState,
-  withHandlers,
-} from 'recompose';
+import { compose, withProps, withState, withHandlers } from 'recompose';
 import {
   withScriptjs,
   withGoogleMap,
@@ -14,6 +9,7 @@ import {
 } from 'react-google-maps';
 import markerIcon from '../../icons/broccoli/broccoli.png';
 import myMarkerIcon from '../../icons/crown/crown.png';
+import './Map.css';
 require('dotenv').config();
 
 export const Map = compose(
@@ -21,7 +17,7 @@ export const Map = compose(
     googleMapURL: `https://maps.googleapis.com/maps/api/js?key=
       ${process.env.REACT_APP_API_KEY}&libraries=places`,
     loadingElement: <div style={{ height: `100%` }} />,
-    containerElement: <div style={{ height: `95%` }} />,
+    containerElement: <div style={{ height: `100%` }} />,
     mapElement: <div style={{ height: `100%` }} />,
   }),
   withScriptjs,
@@ -48,7 +44,7 @@ export const Map = compose(
           type: ['establishment', 'food', 'cafe', 'restaurant'],
         };
         service.nearbySearch(request, (results, status) => {
-          if (status == window.google.maps.places.PlacesServiceStatus.OK) {
+          if (status === window.google.maps.places.PlacesServiceStatus.OK) {
             console.log(results);
             updatePlaces(results);
           }
@@ -102,17 +98,18 @@ export const Map = compose(
                       key={name}
                     >
                       {props.selectedPlace === place_id && (
-                        <InfoWindow onCloseClick={() => props.onToggleOpen()}>
+                        <InfoWindow
+                          onCloseClick={() => props.onToggleOpen()}
+                          className={'InfoWindow'}
+                          // options={{ maxWidth: 200 }}
+                        >
                           <>
                             <div>{name}</div>
                             <div>{rating}</div>
                             <div>{vicinity}</div>
                             {photos && photos.length && (
                               <img
-                                style={{
-                                  maxWidth: '300px',
-                                  maxHeight: '300px',
-                                }}
+                                className={'previewImage'}
                                 src={photos[0].getUrl()}
                                 alt="text"
                               />

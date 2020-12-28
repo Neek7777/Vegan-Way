@@ -20,7 +20,6 @@ export const useRoutes = (isAuthenticated) => {
         </Route>
         <Route path="/map" exact>
           <MapPage />
-          <button>Показать рестораны рядом</button>
         </Route>
         <Route path="/favorite" exact>
           <FavoritePage />
