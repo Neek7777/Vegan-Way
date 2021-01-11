@@ -1,4 +1,6 @@
 import React from 'react';
+// import { IndexRedirect } from 'react-router';
+
 import {
   // BrowserRouter as Router,
   Route,
@@ -11,11 +13,14 @@ import { MapPage } from './pages/MapPage/MapPage';
 import { FavoritePage } from './pages/FavoritePage/FavoritePage';
 // import { AuthPage } from './pages/AuthPage/AuthPage';
 
+
 export const useRoutes = (isAuthenticated) => {
   if (isAuthenticated) {
+    
     return (
-      <Switch>
-        <Route path="/" exact>
+      <Switch >
+        {/* <IndexRedirect to="/main" /> */}
+        <Route path="/main" exact>
           <MainPage />
         </Route>
         <Route path="/map" exact>
@@ -24,7 +29,7 @@ export const useRoutes = (isAuthenticated) => {
         <Route path="/favorite" exact>
           <FavoritePage />
         </Route>
-        <Redirect to="/" />
+        <Redirect to="/main" />
       </Switch>
     );
   }

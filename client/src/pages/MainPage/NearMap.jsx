@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { compose, withProps, withState, withHandlers } from 'recompose';
+import { Rate, Divider } from 'antd';
 import {
   withScriptjs,
   withGoogleMap,
@@ -10,6 +11,7 @@ import {
 } from 'react-google-maps';
 import markerIcon from '../../icons/broccoli/broccoli.png';
 import myMarkerIcon from '../../icons/crown/crown.png';
+import './NearMap.css';
 require('dotenv').config();
 
 export const NearMap = compose(
@@ -56,7 +58,6 @@ export const NearMap = compose(
         service.nearbySearch(request, (results, status) => {
           if (status === window.google.maps.places.PlacesServiceStatus.OK) {
             updateNearPlace(results[0]);
-
           }
         });
 
@@ -89,7 +90,7 @@ export const NearMap = compose(
   })
 )((props) => {
   const [position, setPosition] = React.useState(null);
-  
+
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
       ({ coords }) => {
@@ -140,9 +141,11 @@ export const NearMap = compose(
                     // options={{ maxWidth: 200 }}
                   >
                     <>
-                      <div>{props.nearPlace.name}</div>
-                      <div>{`Рейтинг: ${props.nearPlace.rating}`}</div>
-                      <div>{`Адрес: ${props.nearPlace.vicinity}`}</div>
+                      <Divider className="cardTitle">
+                        {props.nearPlace.name}
+                      </Divider>
+                      <Rate disabled defaultValue={props.nearPlace.rating} />
+                      <div className="cardDescription">{`Адрес: ${props.nearPlace.vicinity}`}</div>
                       {props.nearPlace.photos &&
                         props.nearPlace.photos.length && (
                           <img

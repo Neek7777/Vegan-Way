@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { compose, withProps, withState, withHandlers } from 'recompose';
+import { Rate, Divider } from 'antd';
 import {
   withScriptjs,
   withGoogleMap,
@@ -98,23 +99,19 @@ export const Map = compose(
                       key={name}
                     >
                       {props.selectedPlace === place_id && (
-                        <InfoWindow
-                          onCloseClick={() => props.onToggleOpen()}
-                          className={'InfoWindow'}
-                          // options={{ maxWidth: 200 }}
-                        >
-                          <>
-                            <div>{name}</div>
-                            <div>{rating}</div>
-                            <div>{vicinity}</div>
+                        <InfoWindow onCloseClick={() => props.onToggleOpen()}>
+                          <div className="infoWindow">
+                            <Divider className="cardTitle">{name}</Divider>
+                            <Rate disabled defaultValue={rating} />
+                            <div className="cardDescription">{`Адрес: ${vicinity}`}</div>
                             {photos && photos.length && (
                               <img
                                 className={'previewImage'}
                                 src={photos[0].getUrl()}
-                                alt="text"
+                                alt={name}
                               />
                             )}
-                          </>
+                          </div>
                         </InfoWindow>
                       )}
                     </Marker>
