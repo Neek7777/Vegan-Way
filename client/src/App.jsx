@@ -5,7 +5,6 @@ import { useAuth } from './hooks/auth.hooks';
 import { AuthContext } from './context/AuthContext';
 import { AuthPage } from './pages/AuthPage/AuthPage';
 import 'antd/dist/antd.css';
-import './App.css'
 import Layout from './components/Layout';
 
 function App() {
@@ -24,7 +23,6 @@ function App() {
       <Router>
         <div className="main">
           {isAuthenticated && <Layout routes={routes} />}
-
           {!isAuthenticated && <AuthPage />}
         </div>
       </Router>

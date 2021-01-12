@@ -1,9 +1,6 @@
 .login-form {
   max-width: 300px;
 }
-/* .login-form-forgot {
-  float: right;
-} */
 .login-form-button {
   width: 100%;
 }
@@ -13,11 +10,4 @@
   height: 100vh;
   justify-content: center;
   align-items: center;
-  /* background-color: mediumturquoise; */
-
 }
-/* .ant-form {
-  display: flex;
-      justify-content: center;
-      align-items: center;
-    } */

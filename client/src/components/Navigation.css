@@ -34,14 +34,9 @@
   cursor: pointer;
 }
 
-.a navLink {
-  font-size: 17px;
-}
-
 .ant-layout-header .ant-menu {
   line-height: 64px;
 }
-.activ {
+.active {
   color: blue !important;
-  /* font-size: 20px !important; */
 }

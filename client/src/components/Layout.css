@@ -1,6 +1,10 @@
 .ant-layout-content {
-    box-sizing: border-box;
-    width: 100%;
-    height: calc(100vh - 94px);
-    
+  box-sizing: border-box;
+  width: 100%;
+  height: calc(100vh - 94px);
+}
+
+.content {
+  padding: '0 50px';
+  margin-top: '30px';
 }

@@ -6,7 +6,6 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/user');
 const router = Router();
 
-//     /api/auth/registr
 router.post(
   '/register',
   [
@@ -48,7 +47,6 @@ router.post(
   }
 );
 
-//     /api/auth/login
 router.post(
   '/login',
   [
@@ -68,7 +66,7 @@ router.post(
       const { email, password } = req.body;
       const user = await User.findOne({ email });
 
-      if (user) {
+      if (!user) {
         return res.status(400).json({ message: 'Пользователь не найден' });
       }
 

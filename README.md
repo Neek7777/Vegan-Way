@@ -24,6 +24,7 @@
 ## Авторы
 
 - [Николай Кетурка](https://github.com/Neek7777)
+- [Александра Волобуева](https://github.com/RabbitWithoutaHat)
 
 
 ##

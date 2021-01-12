@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react';
 import './AuthPage.css';
 import 'antd/dist/antd.css';
-import { Form, Input, Button, Checkbox } from 'antd';
+import { Form, Input, Button } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { useHttp } from '../../hooks/http.hooks';
-import { useMessage } from '../../hooks/massege.hooks';
+import { useMessage } from '../../hooks/message.hooks';
 import { AuthContext } from '../../context/AuthContext';
 
 export const AuthPage = () => {
@@ -47,7 +47,6 @@ export const AuthPage = () => {
         initialValues={{
           remember: true,
         }}
-        // onFinish={onFinish}
       >
         <h1>Vegan Way</h1>
         <Form.Item
