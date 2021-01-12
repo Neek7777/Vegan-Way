@@ -1,9 +1,9 @@
 import React from 'react';
+import { NearMap } from './NearMap';
 
 export const MainPage = () => {
-  return (
-    <div>
-      <h1>MainPage</h1>
-    </div>
-  );
+  const handleMarkerClick = () => {
+    console.log('click!');
+  };
+  return <NearMap isMarkerShown={true} onMarkerClick={handleMarkerClick} />;
 };

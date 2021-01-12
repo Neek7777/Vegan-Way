@@ -1,0 +1,15 @@
+.ant-divider-horizontal.ant-divider-with-text {
+  font-size: 30px !important;
+  font-weight: 600 !important;
+  margin: 10px !important;
+}
+.cardDescription {
+  font-size: 15px;
+  padding: 12px 0;
+  font-weight: 600 !important;
+}
+
+.previewImage {
+  display: block;
+  margin: 0 auto;
+}
