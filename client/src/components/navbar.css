@@ -39,9 +39,9 @@
 }
 
 .ant-layout-header .ant-menu {
-  line-height: 63px;
+  line-height: 64px;
 }
 .activ {
   color: blue !important;
-  font-size: 20px !important;
+  /* font-size: 20px !important; */
 }
